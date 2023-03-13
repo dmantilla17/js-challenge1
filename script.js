@@ -21,6 +21,7 @@ function getPasswordLength() {
 }
 //adding characters to be able to generate the password
 function generatePassword() {
+  //adding characters for the password
   var lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numbersCharacters = "0123456789";
@@ -30,7 +31,7 @@ function generatePassword() {
 
   var passwordLength = getPasswordLength();
   console.log(passwordLength);
-
+//if statements to ask user if they would like to use numbers,upper case and lower case and special characters.
   if (confirm("Would you like to use numbers?"))
     chosenCharacters += numbersCharacters;
   if (confirm("Would you like to use lowercase characters?"))
@@ -40,7 +41,7 @@ function generatePassword() {
   if (confirm("Would you like to use special characters?"))
     chosenCharacters += symbolsCharacters;
   console.log(chosenCharacters);
-
+//returning the password using a for loop to base how much the user wanted to put
   for (var i = 0; i < passwordLength; i++) {
     var randomCharacter =
       chosenCharacters[Math.floor(Math.random() * chosenCharacters.length)];
